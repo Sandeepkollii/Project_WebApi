@@ -1,0 +1,91 @@
+﻿@model IEnumerable<TMS_Application.Models.Course>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th> 
+             @Html.DisplayNameFor(model => model.CourseId) 
+             </th> 
+            <th>
+                @Html.DisplayNameFor(model => model.CourseName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CourseDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Duration)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Availability)
+            </th>
+            
+            @* <th> *@
+            @*     @Html.DisplayNameFor(model => model.CreatedBy) *@
+            @* </th> *@
+            @* <th> *@
+            @*     @Html.DisplayNameFor(model => model.CreatedOn) *@
+            @* </th> *@
+            @* <th> *@
+            @*     @Html.DisplayNameFor(model => model.UpdatedBy) *@
+            @* </th> *@
+            @* <th> *@
+            @*     @Html.DisplayNameFor(model => model.Updated) *@
+            @* </th> *@
+            @* <th> *@
+            @*     @Html.DisplayNameFor(model => model.IsActive) *@
+            @* </th> *@
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td> 
+                 @Html.DisplayFor(modelItem => item.CourseId) 
+             </td> 
+            <td>
+                @Html.DisplayFor(modelItem => item.CourseName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CourseDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Duration)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Availability)
+            </td>
+            
+            @* <td> *@
+            @*     @Html.DisplayFor(modelItem => item.CreatedBy) *@
+            @* </td> *@
+            @* <td> *@
+            @*     @Html.DisplayFor(modelItem => item.CreatedOn) *@
+            @* </td> *@
+            @* <td> *@
+            @*     @Html.DisplayFor(modelItem => item.UpdatedBy) *@
+            @* </td> *@
+            @* <td> *@
+            @*     @Html.DisplayFor(modelItem => item.Updated) *@
+            @* </td> *@
+            @* <td> *@
+            @*     @Html.DisplayFor(modelItem => item.IsActive) *@
+            @* </td> *@
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.CourseId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.CourseId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.CourseId })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
